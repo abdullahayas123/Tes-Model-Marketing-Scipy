@@ -1,0 +1,8 @@
+YG BISA DI LABEL ENCODING
+1. education (unknown dan illeterate digabung jadi (0), paling tinggi profession course (6))
+2. age_bin
+3. duration_bin
+
+RF (Ayas)
+DT (Hendri)
+LR (Natali)
