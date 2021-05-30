@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Iris Classification</title>
+  </head>
+  <body>
+    <h1>Classification Credit Card Default</h1>
+    <br>
+    <br>Limit Balance : {{ data['limit_bal']  }}
+    <br>Sex : {{ data['sex']  }}
+    <br>Education : {{ data['education']  }}
+    <br>Marriage : {{ data['marriage']  }}
+    <br>Age : {{ data['age']  }}
+    <br>Payment 0 : {{ data['pay_0']  }}
+    <br>Payment 2 : {{ data['pay_2']  }}
+    <br>Payment 3 : {{ data['pay_3']  }}
+    <br>Payment 4 : {{ data['pay_4']  }}
+    <br>Payment 5 : {{ data['pay_5']  }}
+    <br>Payment 6 : {{ data['pay_6']  }}
+    <br>Bill Amount 1 : {{ data['bill_amt1']  }}
+    <br>Bill Amount 2 : {{ data['bill_amt2']  }}
+    <br>Bill Amount 3 : {{ data['bill_amt3']  }}
+    <br>Bill Amount 4 : {{ data['bill_amt4']  }}
+    <br>Bill Amount 5 : {{ data['bill_amt5']  }}
+    <br>Bill Amount 6 : {{ data['bill_amt6']  }}
+    <br>Payment Amount 1 : {{ data['pay_amt1']  }}
+    <br>Payment Amount 2 : {{ data['pay_amt2']  }}
+    <br>Payment Amount 3 : {{ data['pay_amt3']  }}
+    <br>Payment Amount 4 : {{ data['pay_amt4']  }}
+    <br>Payment Amount 5 : {{ data['pay_amt5']  }}
+    <br>Payment Amount 6 : {{ data['pay_amt6']  }}
+    <br>
+    Hasil Klasifikasi : {{ pred }}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
