@@ -16,7 +16,7 @@
 
     <form method="POST" action="http://127.0.0.1:5000/hasil">
         <!-- ID : <input type="number" name="angka"> -->
-        <br>Age           : <input type="number" step="1" name="age">
+        <br>Age : <input type="number" step="1" name="age">
         <br>Job : 
         <select name="job">
           <option value="housemaid">Housemaid</option>
@@ -33,7 +33,7 @@
           <option value="student">Student</option>
         </select> 
 
-        <br>Marital : 
+        <br>Marital Status : 
         <select name="mar">
           <option value="married">Married</option>
           <option value="single">Single</option>
@@ -80,7 +80,7 @@
           <option value="cellular">Cellular</option>
         </select> 
 
-        <br>Month (Last Contact ) : 
+        <br>Month (Last Contact) : 
         <select name="mon">
           <option value="mar">March</option>
           <option value="apr">April</option>
@@ -105,7 +105,7 @@
           <option value="sun">Sunday</option>
         </select> 
 
-        <br>Last Contact From Previous Campaign : <input type="number" name="pdays">
+        <br>Days from Previous Campaign Last Contact : <input type="number" name="pdays">
 
         <br>Previous Number of Contact : <input type="number" name="prev">
 
@@ -116,15 +116,15 @@
           <option value="success">Success</option>
         </select> 
 
-        <br>Employee Variation Rate : <input type="number" name="var">
+        <br>Employee Variation Rate : <input type="number" step=0.1 name="var" value=-3.0 readonly>
 
-        <br>Consumer Price Index : <input type="number" name="pri">
+        <br>Consumer Price Index : <input type="number" step=0.001 name="pri" value=92.713 readonly>
 
-        <br>Consumer Confidence Index : <input type="number" name="conf">
+        <br>Consumer Confidence Index : <input type="number" step=0.1 name="conf" value=-33.0 readonly>
 
-        <br>Euribor 3 Months Rate : <input type="number" name="eur">
+        <br>Euribor 3 Months Rate : <input type="number" step=0.001 name="eur" value=0.7 readonly>
 
-        <br>Number of Employees : <input type="number" name="num">
+        <br>Number of Employees : <input type="number" name="num" step=0.1 value=5023.5 readonly>
 
         <br><button type="submit" class="btn btn-success">Classify</button>
 

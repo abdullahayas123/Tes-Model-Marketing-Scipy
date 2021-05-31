@@ -11,33 +11,34 @@
     <title>Iris Classification</title>
   </head>
   <body>
-    <h1>Classification Credit Card Default</h1>
+    <h1>Marketing Campaign Result Classification</h1>
     <br>
-    <br>Limit Balance : {{ data['limit_bal']  }}
-    <br>Sex : {{ data['sex']  }}
-    <br>Education : {{ data['education']  }}
-    <br>Marriage : {{ data['marriage']  }}
     <br>Age : {{ data['age']  }}
-    <br>Payment 0 : {{ data['pay_0']  }}
-    <br>Payment 2 : {{ data['pay_2']  }}
-    <br>Payment 3 : {{ data['pay_3']  }}
-    <br>Payment 4 : {{ data['pay_4']  }}
-    <br>Payment 5 : {{ data['pay_5']  }}
-    <br>Payment 6 : {{ data['pay_6']  }}
-    <br>Bill Amount 1 : {{ data['bill_amt1']  }}
-    <br>Bill Amount 2 : {{ data['bill_amt2']  }}
-    <br>Bill Amount 3 : {{ data['bill_amt3']  }}
-    <br>Bill Amount 4 : {{ data['bill_amt4']  }}
-    <br>Bill Amount 5 : {{ data['bill_amt5']  }}
-    <br>Bill Amount 6 : {{ data['bill_amt6']  }}
-    <br>Payment Amount 1 : {{ data['pay_amt1']  }}
-    <br>Payment Amount 2 : {{ data['pay_amt2']  }}
-    <br>Payment Amount 3 : {{ data['pay_amt3']  }}
-    <br>Payment Amount 4 : {{ data['pay_amt4']  }}
-    <br>Payment Amount 5 : {{ data['pay_amt5']  }}
-    <br>Payment Amount 6 : {{ data['pay_amt6']  }}
+    <br>Job : {{ data['job']  }}
+    <br>Marital Status : {{ data['mar']  }}
+    <br>Education : {{ data['edu']  }}
+    <br>Credit in Default : {{ data['cre']  }}
+    <br>Housing Loan : {{ data['hou']  }}
+    <br>Personal Loan : {{ data['per']  }}
+    <br>Contact Communication Type : {{ data['con']  }}
+    <br>Month (Last Contact) : {{ data['mon']  }}
+    <br>Day of Week (Last Contact) : {{ data['day']  }}
+    <br>Days from Previous Campaign Last Contact : : {{ data['pdays']  }}
+    <br>Previous Number of Contact : {{ data['prev']  }}
+    <br>Outcome from Previous Campaign : {{ data['pout']  }}
+    <br>Employee Variation Rate : {{ data['var']  }}
+    <br>Consumer Price Index  : {{ data['bill_amt4']  }}
+    <br>Consumer Confidence Index : {{ data['conf']  }}
+    <br>Number of Employees : {{ data['num']  }}
     <br>
-    Hasil Klasifikasi : {{ pred }}
+    <br>Prediksi Hasil Marketing Campaign untuk customer : {{ pred }}
+    <br>Probabilitas Hasil Prediksi adalah Ditolak : {{proba[0]}}
+    <br>Probabilitas Hasil Prediksi adalah Diterima : {{proba[1]}}
+    <br>
+    <br>Catatan:
+    <br>1. Jika hasil prediksi adalah ditolak dan probabilitasnya > 0.7, silahkan lanjut memasukkan data customer berikutnya 
+    <br>2. a. Apabila hasil prediksi adalah ditolak dan probabilitasnya di antara 0.7 s/d 0.5, silahkan lanjut mengecek saldo atau historis saldo dari customer tersebut
+    <br>2. b. Bila saldo customer > EUR 30,000 maka customer tetap dihubungi
 
     <!-- Optional JavaScript; choose one of the two! -->
 
