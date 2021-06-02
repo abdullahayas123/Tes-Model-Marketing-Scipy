@@ -139,8 +139,8 @@ def result():
         else:
             prediksi = 'Ditolak'
         prob = Model.predict_proba(hasil)
-        prob0 = round(prob[0][0], 2)
-        prob1 = round(prob[0][1], 2)
+        prob0 = prob[0][0]
+        prob1 = prob[0][1]
         print(prob0, prob1)
     return render_template('result.html', data=input, pred=prediksi, proba=[prob0, prob1])
 
