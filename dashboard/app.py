@@ -40,10 +40,11 @@ def pred():
 
 @app.route('/gambar', methods=['POST'])
 def pic():
+
     strFile = "./dashboard/static/chart.png"
     df = pd.read_csv('bank-additional-full.csv', sep=';')
     plt.figure(figsize=(15,8))
-    num_col = ['age', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 'cons.conf.idx', 'euribor3m', 'nr.employed']
+    num_col = ['campaign', 'age', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 'cons.conf.idx', 'euribor3m', 'nr.employed']
     if request.method == 'POST':
       input = request.form
       jumlah = str(input['jumlah'])
@@ -52,7 +53,7 @@ def pic():
       if jumlah == 'uni':
         if kol1 in num_col:
           sns.histplot(x=df[kol1])
-          # plt.show()
+          plt.legend()
           if os.path.isfile(strFile):
             os.remove(strFile) 
           plt.savefig(strFile)
@@ -60,7 +61,7 @@ def pic():
         else:
           temp = pd.crosstab(index = df[kol1], columns = 'Sum')
           sns.barplot(data=temp.reset_index(), x=kol1, y='Sum')
-          # plt.show()
+          plt.legend()
           if os.path.isfile(strFile):
             os.remove(strFile) 
           plt.savefig(strFile)
@@ -74,17 +75,22 @@ def pic():
           # plt.xticks(rotation=45)
           plt.subplot(1,2,2)
           plt.hist(x = df[df['y']=='no'][kol1],color='r',bins=15)
+          if os.path.isfile(strFile):
+            os.remove(strFile) 
+          plt.savefig(strFile)
           # plt.title('Comparison Graph of Job Groups with Bank Deposit Subscribed as no')
           # plt.xticks(rotation=45)
-          # plt.show()
+          plt.legend()
           pass
         else:
-          plt.figure(figsize = (8,6))
+          plt.figure(figsize = (15,8))
           sns.countplot(x = kol1, data = df , hue = 'y')
+          if os.path.isfile(strFile):
+            os.remove(strFile) 
+          plt.savefig(strFile)
           # plt.title('Comparison Graph of Contact Communication Type with Bank Deposit Subscribed')
           # plt.xticks(rotation=45)
-          # plt.show()
-        
+          plt.legend()
     return render_template('viz.html')
 
 @app.route('/hasil', methods=['POST'])
@@ -135,6 +141,7 @@ def result():
         prob = Model.predict_proba(hasil)
         prob0 = round(prob[0][0], 2)
         prob1 = round(prob[0][1], 2)
+        print(prob0, prob1)
     return render_template('result.html', data=input, pred=prediksi, proba=[prob0, prob1])
 
 if __name__ == '__main__':

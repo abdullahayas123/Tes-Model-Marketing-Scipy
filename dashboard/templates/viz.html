@@ -11,18 +11,43 @@
     <title>Visualization</title>
   </head>
   <body>
-    <h1>Visualization</h1>
-    <br>
-    <br>
-    <form method="POST" action="http://127.0.0.1:5000/gambar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SciPy</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Final Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/dataset">Dataset</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/visualize">Visualization</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5000/prediction">Prediction</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+  </nav>
+    <h1>Data Visualization</h1>
+    <br/>
+    <form>
       <br>Pilih jumlah kolom :
-      <select name="jumlah">
+      <select name="jumlah" id="jumlah">
         <option value="uni">Univariate</option>
         <option value="multi">Multivariate</option>
       </select>
       <br>
       <br>Pilih Kolom :
-      <select name="kolom1">
+      <select name="kolom1" id="kolom1">
         <option value="age">Age</option>
         <option value="job">Job</option>
         <option value="marital">Marital Status</option>
@@ -45,18 +70,12 @@
         <option value="nr.employed">Number Employed</option>
         <option value="y">Result</option>
       </select>
-      <br>
+      <br/>
 
-      <br><button type="submit" class="btn btn-success">Show</button>
-      <br>
-      <img src=static\chart.png>
+      <br/><button type="button" onclick="kirim()" class="btn btn-success">Show</button>
+      <br/>
+      <div id="test"></div>
     </form>
-    <br>Gambar
-    
-
-
-
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -68,5 +87,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <script>
+      function kirim() {
+        var kolom1 = $('#kolom1').val();
+        var jumlah = $('#jumlah').val();
+        $.ajax({
+          url: "http://127.0.0.1:5000/gambar",
+          method: "POST",
+          data: { 'kolom1' : kolom1, 'jumlah' : jumlah },
+          success : function()
+          {            
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            $('#test').html('<img src="static/chart.png?v='+time+'" />');
+          }
+        });
+      }
+    </script>
+
+
   </body>
 </html>
