@@ -40,7 +40,6 @@ def pred():
 
 @app.route('/gambar', methods=['POST'])
 def pic():
-
     strFile = "./dashboard/static/chart.png"
     df = pd.read_csv('bank-additional-full.csv', sep=';')
     plt.figure(figsize=(15,8))
@@ -131,7 +130,7 @@ def result():
         , 'illiterate':0
         , 'unknown':0
         })
-        print(hasil)
+        # print(hasil)
 
         prediksi = Model.predict(hasil)
         if prediksi == 1:
